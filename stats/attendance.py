@@ -8,5 +8,8 @@ attendance.columns = ['year','attendance']
 selection = attendance.loc[:,'attendance']
 selection = pd.to_numeric(selection)
 
-plt.plot(attendance['year'], attendance['attendance'])
+attendance.plot(x='year', y='attendance', figsize=(15,7) ,kind='bar')
+plt.xlabel('Year')
+plt.ylabel('Attendance')
+
 plt.show()
