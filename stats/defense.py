@@ -20,8 +20,8 @@ defense = pd.merge(info,events_plus_pa)
 defense.loc[:,'DER'] = 1 -((defense['H']+defense['ROE'])/(defense['PA']-defense['BB']-defense['SO']-defense['HBP']-defense['HR']))
 defense['year'] = pd.to_numeric(defense['year'])
 
-der = defense.loc[defense['year'] >= 1978] [['year','defense','DER']]
+der = defense.loc[defense['year'] >= 1978,['year','defense','DER']]
 der = der.pivot(index='year',columns='defense',values='DER')
 
-der.plot(x_compat=True,xticks=range(1978,201814) , rot=45)
+der.plot(x_compat=True,xticks=range(1978,2018,4) , rot=45)
 plt.show()
